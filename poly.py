@@ -18,7 +18,7 @@ def makePoly(f, d=None, k=None):
   for j in range(1, k-1):
     s = 0
     for i in range(1, k):
-      s += i**(k-1-j)*f[i-d]
+      s += i**(k-1-j)*f[(i-d) % k]
     p[j] = -s % k
   
   p[k-1] = -1 * sum(f) % k
